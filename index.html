@@ -414,6 +414,17 @@ html{scroll-behavior:smooth}
 @media(max-width:350px){.afgm-work-grid{grid-template-columns:1fr}.afgm-work{flex-direction:row}.afgm-work-thumb{width:44%;flex-shrink:0}.afgm-work-copy{justify-content:center}}
 @media(min-width:750px){.afgm-work-grid{grid-template-columns:repeat(3,minmax(0,1fr))}}
 
+/* Mobile readability: give AFGM videos and remixes full-width previews, readable titles and generous play targets. */
+@media(max-width:600px){
+  .worlds-modal .afgm-work-grid{grid-template-columns:minmax(0,1fr);gap:14px}
+  .worlds-modal .afgm-work{flex-direction:column;border-radius:15px}
+  .worlds-modal .afgm-work-thumb{width:100%;aspect-ratio:16/9;flex-shrink:0}
+  .worlds-modal .afgm-work-copy{padding:13px 15px 15px;min-height:0;gap:7px}
+  .worlds-modal .afgm-work-copy strong{font-size:16px;line-height:1.35}
+  .worlds-modal .afgm-work-copy small{font-size:12px;line-height:1.4}
+  .worlds-modal .afgm-work-play{width:44px;height:44px;font-size:18px}
+}
+
 /* V6 — Bands & collaborations and unobtrusive Originals carousel playback */
 .collab-cards{display:grid;gap:12px;margin:12px 0 6px}
 .collab-card{background:linear-gradient(140deg,#242031 0%,#13111c 100%);border:1px solid #ffffff24;border-radius:14px;overflow:hidden;display:grid;grid-template-columns: minmax(92px,36%) 1fr;gap:0}
