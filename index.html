@@ -542,20 +542,26 @@ html{scroll-behavior:smooth}
 @media (prefers-reduced-motion:reduce){.booking-tile{transition:none}}
 </style>
 <style id="apgl-card-framing-20261016">
-/* Preserve the wide APGL logo's natural proportions in both mobile card slots. */
-.booking-lessons .booking-visual.logo-visual{background:#fff!important;overflow:hidden}
-.booking-lessons .booking-visual.logo-visual>img{
-  position:absolute!important;left:0!important;top:0!important;
-  width:100%!important;height:100%!important;
-  max-width:100%!important;max-height:100%!important;
-  object-fit:contain!important;object-position:center!important;
-  transform:none!important;padding:0!important;filter:none!important;
+/* APGL: keep the original wide artwork undistorted. Crop only a sliver of
+   the outer white margin so the lettering fills the booking and World tiles. */
+.booking-lessons .booking-visual.logo-visual,
+.world-tile.blue .world-image{
+  position:relative!important;
+  background:#fff!important;
+  overflow:hidden!important;
 }
-.world-tile.blue .world-image{background:#fff!important;overflow:hidden}
+.booking-lessons .booking-visual.logo-visual::after{
+  display:none!important;
+}
+.booking-lessons .booking-visual.logo-visual>img,
 .world-tile.blue .world-image>img{
-  display:block;width:100%!important;height:100%!important;max-width:100%!important;
-  object-fit:contain!important;object-position:center!important;
-  transform:none!important;padding:0!important;filter:none!important;
+  position:absolute!important;display:block!important;
+  left:50%!important;top:50%!important;
+  width:105%!important;height:auto!important;
+  max-width:none!important;max-height:none!important;min-width:0!important;
+  object-fit:contain!important;object-position:center center!important;
+  transform:translate(-50%,-50%)!important;
+  padding:0!important;filter:none!important;
 }
 </style>
 </head><body><div aria-hidden="true" class="ambient-scene"><span class="ambient-orb one"></span><span class="ambient-orb two"></span><span class="ambient-orb three"></span></div><div aria-hidden="true" class="neon-circuit-backdrop"><div class="neon-core-glow"></div><div class="circuit-left"><svg aria-hidden="true" class="circuit-graphic" preserveaspectratio="none" viewbox="0 0 160 960">
