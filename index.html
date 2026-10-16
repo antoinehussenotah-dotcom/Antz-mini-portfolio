@@ -307,6 +307,11 @@ html{scroll-behavior:smooth}
 .booking-intro .booking-kicker{letter-spacing:.13em}
 .booking-lessons .booking-visual.logo-visual{position:relative;background:#fff!important;overflow:hidden}
 .booking-lessons .booking-visual.logo-visual>img{position:absolute!important;width:110%!important;height:auto!important;max-width:none!important;max-height:none!important;min-width:0!important;left:50%!important;top:50%!important;transform:translate(-50%,-50%)!important;object-fit:contain!important;filter:none!important}
+/* APGL booking-card logo: mobile-first sizing, intentionally limited to the top service card. */
+@media (max-width:720px){
+  .booking-lessons .booking-visual.logo-visual>img{width:143%!important;max-width:none!important;height:auto!important;}
+}
+
 .booking-visual .tile-logo.photo-logo-img{width:56px!important;bottom:0px!important;right:0px!important}
 #book-live .gig:first-child .gig-photo-signature.photo-logo-img{width:62px!important;left:5px!important;right:auto!important;top:1px!important}
 .world-photo-logo.photo-logo-img{width:60px!important;bottom:0px!important;right:2px!important}
