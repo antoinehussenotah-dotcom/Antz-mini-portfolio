@@ -210,7 +210,7 @@
     html = html.replace("</head>","<style>"+css+"</style></head>");
     html = html.replace('<section class="panel live">',nav+'<section class="panel live">');
     html = html.replace('<section class="panel contact" id="contact">',afgm+'<section class="panel contact" id="contact">');
-    html = addScript(html.replace("</body>",""),js)+"</body>";
+    html = html.replace("</body>", addScript("",js)+"</body>");
     document.open();document.write(html);document.close();
   } catch(err) {
     document.getElementById("preview-loading").innerHTML =
