@@ -610,6 +610,17 @@ html{scroll-behavior:smooth}
   .showcase-action{font-size:11.5px;line-height:1.35}
   .modal-world-tab{font-size:11px;white-space:normal}
 }
+</style>
+<style id="antz-live-card-spacing-20261017">
+/* Keep the live-event categories readable on narrow screens; no orphaned dot. */
+.booking-live .booking-tile-body{gap:7px}
+.booking-live .live-event-types{line-height:1.5}
+.booking-live .live-event-parties::before{content:" · "}
+.booking-live .book-proof{margin-top:3px}
+@media(max-width:600px){
+  .booking-live .live-event-parties{display:block}
+  .booking-live .live-event-parties::before{content:none}
+}
 </style></head><body><div aria-hidden="true" class="ambient-scene"><span class="ambient-orb one"></span><span class="ambient-orb two"></span><span class="ambient-orb three"></span></div><div aria-hidden="true" class="neon-circuit-backdrop"><div class="neon-core-glow"></div><div class="circuit-left"><svg aria-hidden="true" class="circuit-graphic" preserveaspectratio="none" viewbox="0 0 160 960">
 <g fill="none" stroke="#f14c76" stroke-linejoin="bevel" stroke-width="1.15">
 <path class="circuit-trace" d="M0 90 H85 L112 118 V187 L146 218 V293 L110 321 H48 L0 360"></path>
@@ -657,7 +668,7 @@ html{scroll-behavior:smooth}
 <div class="booking-tiles">
 <button aria-label="Open live performances details in the Four Worlds menu" class="booking-tile booking-live" data-open-world="live" type="button">
 <div class="booking-visual"><img alt="AntZ playing guitar at The Hare" src="assets/hare-live-photo.webp" decoding="async"/><span class="tile-logo photo-logo-img"><img alt="" aria-hidden="true" src="assets/antz-photo-signature.webp" decoding="async"/></span></div>
-<span class="booking-tile-body"><strong>Live performances</strong><small>Gigs · Private events · Parties</small><span class="book-proof">★★★★★ <b>5.0</b> · Live review</span><span class="tile-cta">Explore live performances ↗</span></span>
+<span class="booking-tile-body"><strong>Live performances</strong><small class="live-event-types">Gigs · Private events<span class="live-event-parties">Parties</span></small><span class="book-proof">★★★★★ <b>5.0</b> · Live review</span><span class="tile-cta">Explore live performances ↗</span></span>
 </button>
 <button aria-label="Open piano and guitar lessons details in the Four Worlds menu" class="booking-tile booking-lessons" data-open-world="lessons" type="button">
 <div class="booking-visual logo-visual"><img alt="Official AntZ Piano and Guitar Lessons (APGL) logo" loading="eager" fetchpriority="low" decoding="async" width="1005" height="425" src="assets/apgl-logo.webp"/></div>
