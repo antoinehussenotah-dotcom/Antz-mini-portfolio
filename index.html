@@ -542,26 +542,27 @@ html{scroll-behavior:smooth}
 @media (prefers-reduced-motion:reduce){.booking-tile{transition:none}}
 </style>
 <style id="apgl-card-framing-20261016">
-/* APGL: keep the original wide artwork undistorted. Crop only a sliver of
-   the outer white margin so the lettering fills the booking and World tiles. */
+/* APGL's official 1005:425 landscape mark must retain its natural proportions.
+   A deep-blue letterbox replaces the unintentional tall white bars in both
+   the booking-first and Four Worlds cards; nothing in the mark is cropped. */
 .booking-lessons .booking-visual.logo-visual,
 .world-tile.blue .world-image{
   position:relative!important;
-  background:#fff!important;
+  background:radial-gradient(ellipse at 50% 48%,#334866 0%,#1b2940 58%,#121622 100%)!important;
   overflow:hidden!important;
 }
-.booking-lessons .booking-visual.logo-visual::after{
-  display:none!important;
-}
+.booking-lessons .booking-visual.logo-visual::after{display:none!important}
 .booking-lessons .booking-visual.logo-visual>img,
 .world-tile.blue .world-image>img{
   position:absolute!important;display:block!important;
   left:50%!important;top:50%!important;
-  width:105%!important;height:auto!important;
+  width:calc(100% - 8px)!important;height:auto!important;
   max-width:none!important;max-height:none!important;min-width:0!important;
   object-fit:contain!important;object-position:center center!important;
   transform:translate(-50%,-50%)!important;
   padding:0!important;filter:none!important;
+  border-radius:4px!important;
+  box-shadow:0 0 0 1px #ffffff45,0 8px 19px #0006!important;
 }
 </style>
 </head><body><div aria-hidden="true" class="ambient-scene"><span class="ambient-orb one"></span><span class="ambient-orb two"></span><span class="ambient-orb three"></span></div><div aria-hidden="true" class="neon-circuit-backdrop"><div class="neon-core-glow"></div><div class="circuit-left"><svg aria-hidden="true" class="circuit-graphic" preserveaspectratio="none" viewbox="0 0 160 960">
