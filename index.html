@@ -655,6 +655,46 @@ html{scroll-behavior:smooth}
   }
 }
 </style>
+
+<style id="antz-mobile-scroll-performance-20261017">
+/* Mobile: keep the same dark neon design, but reduce expensive continuous paints
+   while visitors scroll inside the Four Worlds and reviews dialogs. */
+@keyframes antzMobileScanSweep {
+  from {transform:translate3d(0,0,0)}
+  to {transform:translate3d(0,110dvh,0)}
+}
+@keyframes antzMobilePanelIn {
+  from {opacity:.9}
+  to {opacity:1}
+}
+@media (max-width:760px), (hover:none) and (pointer:coarse) {
+  /* The full-screen blurred backdrop is costly over a scrolling dialog. */
+  .worlds-modal::backdrop,
+  .review-dialog::backdrop {
+    -webkit-backdrop-filter:none!important;
+    backdrop-filter:none!important;
+  }
+  /* Preserve the artwork and glows as static layers, not moving blurred paints. */
+  .ambient-orb,.neon-core-glow,.v4-pulse,.v4-code-fall,.circuit-trace {
+    animation:none!important;
+    will-change:auto!important;
+  }
+  /* Keep one understated neon sweep, animated by compositor transform only. */
+  .ambient-scanline {
+    top:-5%;
+    animation:antzMobileScanSweep 17s linear infinite!important;
+    will-change:transform;
+  }
+  /* Switch worlds via a light fade; avoid moving a large image-rich panel. */
+  .world-detail {animation:antzMobilePanelIn .14s ease-out both!important}
+  .worlds-modal-scroll,.review-scroll,.band-dialog-inner,.antz-collab-note {
+    -webkit-overflow-scrolling:touch;
+  }
+}
+@media (prefers-reduced-motion:reduce){
+  .ambient-scanline,.world-detail{animation:none!important}
+}
+</style>
 <style id="antz-final-image-stability-20261017">
 /* The Originals artwork is static: avoid the flicker overlay looking like an image glitch. */
 .v4-original-art::after{animation:none!important;opacity:.22!important}
@@ -931,7 +971,7 @@ document.getElementById('play-hare').addEventListener('click',()=>{
  // Tiny pointer-responsive movement enhances the original atmospheric gradient without covering content.
  const ambient=document.querySelector('.ambient-scene');
  let lastTime=0;
- window.addEventListener('pointermove',e=>{if(window.matchMedia('(prefers-reduced-motion: reduce)').matches)return;const now=performance.now();if(now-lastTime<60)return;lastTime=now;ambient.style.setProperty('--px',((e.clientX/window.innerWidth-.5)*32).toFixed(1)+'px');ambient.style.setProperty('--py',((e.clientY/window.innerHeight-.5)*30).toFixed(1)+'px');},{passive:true});
+ window.addEventListener('pointermove',e=>{if(e.pointerType!=='mouse'||window.matchMedia('(prefers-reduced-motion: reduce)').matches)return;const now=performance.now();if(now-lastTime<60)return;lastTime=now;ambient.style.setProperty('--px',((e.clientX/window.innerWidth-.5)*32).toFixed(1)+'px');ambient.style.setProperty('--py',((e.clientY/window.innerHeight-.5)*30).toFixed(1)+'px');},{passive:true});
  select('live',false);
 })();
 </script><dialog aria-label="Original artwork preview" class="showcase-art-dialog" id="showcase-art-dialog"><button class="showcase-art-close" id="showcase-art-close" type="button">✕ Close</button><img alt="Genesis — rain-soaked cyberpunk concept artwork" src="assets/genesis-artwork.webp" decoding="async"/><p>Genesis — concept artwork / teaser preview</p></dialog><script id="v7-afgm-feature-build">(function(){
