@@ -731,6 +731,55 @@ html{scroll-behavior:smooth}
   .ambient-scanline,.world-detail,.ambient-orb.one,.v4-code-fall{animation:none!important}
 }
 </style>
+<style id="antz-genesis-terminal-typography-20261017">
+/* The Genesis featured slide has a code/terminal identity, distinct from
+   the other Originals releases; no extra moving effects on mobile. */
+#world-originals .genesis-code-slide .showcase-copy{
+  position:relative;gap:12px;
+  background:linear-gradient(145deg,#190e1b 0%,#120f1a 100%);
+  border-left:2px solid #f26982;
+  font-family:ui-monospace,SFMono-Regular,Consolas,"Liberation Mono",monospace;
+}
+#world-originals .genesis-code-slide .showcase-tag{
+  font-family:inherit;letter-spacing:.055em;font-weight:650;
+  color:#ff8fa5;text-transform:uppercase;line-height:1.5;
+}
+#world-originals .genesis-code-slide .showcase-tag::before{
+  content:"// ";color:#ef788f;
+}
+#world-originals .genesis-code-slide .showcase-copy h4{
+  font-family:inherit;font-size:clamp(19px,4.7vw,25px);font-weight:780;
+  letter-spacing:.055em;line-height:1.25;text-transform:uppercase;
+  color:#ffe5eb;
+}
+#world-originals .genesis-code-slide .showcase-copy h4::before{
+  content:"> ";color:#ff7594;
+}
+#world-originals .genesis-code-slide .showcase-copy h4::after{
+  content:"_";color:#ff819e;
+}
+#world-originals .genesis-code-slide .showcase-copy p{
+  font-family:inherit;font-size:clamp(12px,3vw,13px);
+  line-height:1.7;color:#f0cad6;letter-spacing:0;
+}
+#world-originals .genesis-code-slide .showcase-copy p::before{
+  content:"/* ";color:#db839b;
+}
+#world-originals .genesis-code-slide .showcase-copy p::after{
+  content:" */";color:#db839b;
+}
+#world-originals .genesis-code-slide .showcase-action{
+  font-family:inherit;letter-spacing:.01em;font-weight:750;
+  background:#492537;border:1px solid #ff80977d;color:#ffe0e8;
+}
+#world-originals .genesis-code-slide .showcase-action::before{
+  content:"$ ";color:#ff91a6;
+}
+#world-originals .showcase-note{
+  font-family:ui-monospace,SFMono-Regular,Consolas,"Liberation Mono",monospace;
+  letter-spacing:.005em;
+}
+</style>
 <style id="antz-final-image-stability-20261017">
 /* The Originals artwork is static: avoid the flicker overlay looking like an image glitch. */
 .v4-original-art::after{animation:none!important;opacity:.22!important}
@@ -943,7 +992,7 @@ document.getElementById('play-hare').addEventListener('click',()=>{
 </div></div>
 <div class="showcase-carousel" data-showcase="originals">
 <div class="showcase-headline"><strong>Featured &amp; latest</strong><span aria-live="polite" class="showcase-count">1 / 3</span></div>
-<div class="showcase-track"><article class="showcase-slide" role="group"><div class="showcase-frame"><div class="showcase-art portrait"><img alt="Genesis artwork" loading="eager" fetchpriority="low" src="assets/genesis-artwork.webp" decoding="async"/></div><div class="showcase-copy"><span class="showcase-tag">NEXT · GENESIS TEASER</span><h4>Genesis</h4><p>A glimpse of Genesis. Watch the teaser to enter the world — the wider story remains untold.</p><div class="showcase-actions"><a class="showcase-action" href="https://youtu.be/zV0FXILnHQg?is=CZ2G61oGy8mq_l6J" rel="noopener noreferrer" target="_blank">Watch teaser ↗</a></div></div></div></article><article class="showcase-slide" hidden="" role="group"><div class="showcase-frame"><div class="showcase-art square"><img alt="Kingdoms artwork" loading="lazy" src="assets/kingdoms-cover.webp" decoding="async"/></div><div class="showcase-copy"><span class="showcase-tag">RELEASED · EP</span><h4>Kingdoms</h4><p>Explore the original EP.</p><div class="showcase-actions"><a class="showcase-action" href="https://open.spotify.com/album/1MTMdcpix4JG2dkEaZp6EI" rel="noopener noreferrer" target="_blank">Spotify ↗</a><a class="showcase-action" href="https://antzmusic.bandcamp.com/album/kingdoms" rel="noopener noreferrer" target="_blank">Bandcamp ↗</a></div></div></div></article><article class="showcase-slide" hidden="" role="group"><div class="showcase-frame"><div class="showcase-art square"><img alt="My Strength artwork" loading="lazy" src="assets/my-strength-cover.webp" decoding="async"/></div><div class="showcase-copy"><span class="showcase-tag">RELEASED · SINGLE</span><h4>My Strength</h4><p>Listen to the released single.</p><div class="showcase-actions"><a class="showcase-action" href="https://open.spotify.com/track/3S9ldjsktTQFXM4s59PsOP" rel="noopener noreferrer" target="_blank">Spotify ↗</a></div></div></div></article></div>
+<div class="showcase-track"><article class="showcase-slide genesis-code-slide" role="group"><div class="showcase-frame"><div class="showcase-art portrait"><img alt="Genesis artwork" loading="eager" fetchpriority="low" src="assets/genesis-artwork.webp" decoding="async"/></div><div class="showcase-copy"><span class="showcase-tag">NEXT · GENESIS TEASER</span><h4>Genesis</h4><p>A glimpse of Genesis. Watch the teaser to enter the world — the wider story remains untold.</p><div class="showcase-actions"><a class="showcase-action" href="https://youtu.be/zV0FXILnHQg?is=CZ2G61oGy8mq_l6J" rel="noopener noreferrer" target="_blank">Watch teaser ↗</a></div></div></div></article><article class="showcase-slide" hidden="" role="group"><div class="showcase-frame"><div class="showcase-art square"><img alt="Kingdoms artwork" loading="lazy" src="assets/kingdoms-cover.webp" decoding="async"/></div><div class="showcase-copy"><span class="showcase-tag">RELEASED · EP</span><h4>Kingdoms</h4><p>Explore the original EP.</p><div class="showcase-actions"><a class="showcase-action" href="https://open.spotify.com/album/1MTMdcpix4JG2dkEaZp6EI" rel="noopener noreferrer" target="_blank">Spotify ↗</a><a class="showcase-action" href="https://antzmusic.bandcamp.com/album/kingdoms" rel="noopener noreferrer" target="_blank">Bandcamp ↗</a></div></div></div></article><article class="showcase-slide" hidden="" role="group"><div class="showcase-frame"><div class="showcase-art square"><img alt="My Strength artwork" loading="lazy" src="assets/my-strength-cover.webp" decoding="async"/></div><div class="showcase-copy"><span class="showcase-tag">RELEASED · SINGLE</span><h4>My Strength</h4><p>Listen to the released single.</p><div class="showcase-actions"><a class="showcase-action" href="https://open.spotify.com/track/3S9ldjsktTQFXM4s59PsOP" rel="noopener noreferrer" target="_blank">Spotify ↗</a></div></div></div></article></div>
 <div class="showcase-controller"><button aria-label="Previous featured item" class="showcase-prev" type="button">←</button><div class="showcase-dots"><button aria-label="Show item 1" aria-pressed="true" class="showcase-dot" data-slide-index="0" type="button"></button><button aria-label="Show item 2" aria-pressed="false" class="showcase-dot" data-slide-index="1" type="button"></button><button aria-label="Show item 3" aria-pressed="false" class="showcase-dot" data-slide-index="2" type="button"></button></div><button aria-label="Next featured item" class="showcase-next" type="button">→</button></div><div class="showcase-autoplay-row"><span>Latest first · Originals</span><button aria-label="Pause automatic rotation" aria-pressed="true" class="showcase-autoplay-toggle" type="button">⏸ Auto: On</button></div>
 <button aria-controls="showcase-all-originals" aria-expanded="false" class="showcase-expand" type="button">Explore the full world <span aria-hidden="true">⌄</span></button>
 <div class="showcase-archive" hidden="" id="showcase-all-originals"><p>Select any item. New work can be added here first.</p><div class="showcase-archive-items"></div></div>
