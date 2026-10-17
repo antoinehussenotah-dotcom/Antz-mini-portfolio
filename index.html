@@ -672,8 +672,9 @@ html{scroll-behavior:smooth}
   to {transform:translate3d(9vw,8vh,0)}
 }
 @keyframes antzMobileCodeDrift {
-  from {transform:translate3d(0,-11vh,0) rotate(var(--antz-code-tilt,-4deg))}
-  to {transform:translate3d(0,13vh,0) rotate(var(--antz-code-tilt,-4deg))}
+  0%   {transform:translate3d(-2vw,-9vh,0) rotate(calc(var(--antz-code-tilt,-4deg) - 2deg))}
+  50%  {transform:translate3d(3vw,1vh,0) rotate(calc(var(--antz-code-tilt,-4deg) + 2deg))}
+  100% {transform:translate3d(-1vw,12vh,0) rotate(calc(var(--antz-code-tilt,-4deg) - 1deg))}
 }
 @media (max-width:760px), (hover:none) and (pointer:coarse) {
   /* The full-screen blurred backdrop is costly over a scrolling dialog. */
@@ -692,24 +693,26 @@ html{scroll-behavior:smooth}
     animation:antzMobileOrbDrift 23s ease-in-out infinite alternate!important;
     will-change:transform!important;
   }
-  /* Two faint streams restore the original digital atmosphere without
-     the costly margin-top animation that can cause layout/repaint work. */
+  /* Bring the digital code forward: two readable, gently swaying streams.
+     GPU-friendly transform only, no layout animation. */
   .v4-code-fall {
     top:7%;
-    opacity:.31!important;
-    animation:antzMobileCodeDrift 25s linear infinite alternate!important;
+    opacity:.56!important;
+    animation:antzMobileCodeDrift 22s ease-in-out infinite alternate!important;
     will-change:transform!important;
   }
   .v4-code-fall.left {--antz-code-tilt:-4deg}
   .v4-code-fall.right {
     --antz-code-tilt:3deg;
-    animation-duration:30s!important;
+    animation-duration:27s!important;
     animation-direction:alternate-reverse!important;
   }
-  /* Keep the existing gentle scanline, animated by transform. */
+  /* Keep the neon scanline, but make it slower and far less dominant. */
   .ambient-scanline {
     top:-5%;
-    animation:antzMobileScanSweep 17s linear infinite!important;
+    opacity:.24!important;
+    box-shadow:0 0 7px rgba(253,78,120,.12)!important;
+    animation:antzMobileScanSweep 23s linear infinite!important;
     will-change:transform;
   }
   /* When a media-rich popup is open, spend the animation budget on its scrolling. */
