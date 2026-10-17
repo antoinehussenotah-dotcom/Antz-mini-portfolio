@@ -667,6 +667,14 @@ html{scroll-behavior:smooth}
   from {opacity:.9}
   to {opacity:1}
 }
+@keyframes antzMobileOrbDrift {
+  from {transform:translate3d(-4vw,-2vh,0)}
+  to {transform:translate3d(9vw,8vh,0)}
+}
+@keyframes antzMobileCodeDrift {
+  from {transform:translate3d(0,-11vh,0) rotate(var(--antz-code-tilt,-4deg))}
+  to {transform:translate3d(0,13vh,0) rotate(var(--antz-code-tilt,-4deg))}
+}
 @media (max-width:760px), (hover:none) and (pointer:coarse) {
   /* The full-screen blurred backdrop is costly over a scrolling dialog. */
   .worlds-modal::backdrop,
@@ -674,16 +682,41 @@ html{scroll-behavior:smooth}
     -webkit-backdrop-filter:none!important;
     backdrop-filter:none!important;
   }
-  /* Preserve the artwork and glows as static layers, not moving blurred paints. */
+  /* Keep large filters and SVG circuitry static to avoid scroll repaints. */
   .ambient-orb,.neon-core-glow,.v4-pulse,.v4-code-fall,.circuit-trace {
     animation:none!important;
     will-change:auto!important;
   }
-  /* Keep one understated neon sweep, animated by compositor transform only. */
+  /* Restore a single drifting neon orb using only compositor-friendly movement. */
+  .ambient-orb.one {
+    animation:antzMobileOrbDrift 23s ease-in-out infinite alternate!important;
+    will-change:transform!important;
+  }
+  /* Two faint streams restore the original digital atmosphere without
+     the costly margin-top animation that can cause layout/repaint work. */
+  .v4-code-fall {
+    top:7%;
+    opacity:.31!important;
+    animation:antzMobileCodeDrift 25s linear infinite alternate!important;
+    will-change:transform!important;
+  }
+  .v4-code-fall.left {--antz-code-tilt:-4deg}
+  .v4-code-fall.right {
+    --antz-code-tilt:3deg;
+    animation-duration:30s!important;
+    animation-direction:alternate-reverse!important;
+  }
+  /* Keep the existing gentle scanline, animated by transform. */
   .ambient-scanline {
     top:-5%;
     animation:antzMobileScanSweep 17s linear infinite!important;
     will-change:transform;
+  }
+  /* When a media-rich popup is open, spend the animation budget on its scrolling. */
+  body:has(dialog[open]) .ambient-orb.one,
+  body:has(dialog[open]) .v4-code-fall {
+    animation-play-state:paused!important;
+    will-change:auto!important;
   }
   /* Switch worlds via a light fade; avoid moving a large image-rich panel. */
   .world-detail {animation:antzMobilePanelIn .14s ease-out both!important}
@@ -692,7 +725,7 @@ html{scroll-behavior:smooth}
   }
 }
 @media (prefers-reduced-motion:reduce){
-  .ambient-scanline,.world-detail{animation:none!important}
+  .ambient-scanline,.world-detail,.ambient-orb.one,.v4-code-fall{animation:none!important}
 }
 </style>
 <style id="antz-final-image-stability-20261017">
