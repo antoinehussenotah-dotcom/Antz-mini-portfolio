@@ -1144,16 +1144,19 @@ document.getElementById('play-hare').addEventListener('click',()=>{
       const idx=Number(car.dataset.currentIndex||0);
       car.__choose((idx+1)%size);
     }
-    function run(){if(timer)clearInterval(timer);timer=setInterval(next,7000);}
+    function run(){if(timer)clearInterval(timer);timer=setInterval(next,12000);}
+    // A section must get its full viewing time whenever it is opened.
+    car.__restartAutoplay=()=>{lastManual=Date.now();run();};
     function markManual(){lastManual=Date.now();run();}
-    toggle.addEventListener('click',()=>{playing=!playing;lastManual=Date.now()-8500;displayState();run();});
+    toggle.addEventListener('click',()=>{playing=!playing;lastManual=Date.now();displayState();run();});
     car.querySelectorAll('.showcase-prev,.showcase-next,.showcase-dot,.showcase-archive-items button').forEach(b=>b.addEventListener('click',markManual));
     panel.querySelectorAll('[data-original-shortcut]').forEach(b=>b.addEventListener('click',markManual));
     // When this world is opened, restart at its latest item, then let visitors browse.
     modal.querySelectorAll('[data-modal-world]').forEach(b=>b.addEventListener('click',()=>{
       if(b.dataset.modalWorld===panel.id.replace('world-','')){
-        lastManual=Date.now()-8500;
-        if(car.__choose)car.__choose(0);        run();
+        lastManual=Date.now();
+        if(car.__choose)car.__choose(0);
+        run();
       }
     }));
     motionReduced.addEventListener('change',()=>{
@@ -1165,6 +1168,7 @@ document.getElementById('play-hare').addEventListener('click',()=>{
   document.querySelectorAll('.world-tile[data-world]').forEach(tile=>tile.addEventListener('click',()=>{
     const car=document.querySelector('#world-'+tile.dataset.world+' .showcase-carousel');
     if(car?.__choose)car.__choose(0);
+    car?.__restartAutoplay?.();
   }));
   // The video already exists in the Live section. Bookings First reuses the same player.
   document.querySelectorAll('[data-booking-hare]').forEach(btn=>btn.addEventListener('click',()=>{
