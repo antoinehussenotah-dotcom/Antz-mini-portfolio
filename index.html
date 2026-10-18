@@ -1041,7 +1041,6 @@ html{scroll-behavior:smooth}
 <span class="world-image afgm-image"><img alt="Official AFGM AntZ Film &amp; Game Music logo" loading="lazy" src="assets/afgm-logo.webp" decoding="async"/></span><span class="world-title">Composing / AfGM</span><span class="world-sub">The composer</span>
 </button>
 </div>
-<div class="apgl-early-shortcut"><span><img src="assets/apgl-logo.webp" alt="" loading="lazy" decoding="async"/> <strong>Personalised student progress</strong></span><button type="button" id="apgl-progress-early" aria-haspopup="dialog" aria-controls="apgl-progress-dialog">See example reports ↗</button></div>
 <div class="worlds-launch-hint">Choose a world for its videos, releases and reviews — all in one interactive menu.</div><button class="band-collab-trigger" id="band-collab-trigger" type="button">Bands &amp; collaborations ↗</button>
 <p class="worlds-hint">Switch between worlds inside the menu, then close to return here.</p>
 </section>
@@ -1621,7 +1620,6 @@ document.getElementById('play-hare').addEventListener('click',()=>{
     const sc=dlg.querySelector('.review-scroll');if(sc)sc.scrollTop=0;
   }
   opener.addEventListener('click',()=>{choose('piano',false);dlg.showModal();});
-  document.getElementById('apgl-progress-early')?.addEventListener('click',()=>{choose('piano',false);dlg.showModal();});
   document.getElementById('apgl-progress-booking')?.addEventListener('click',()=>{choose('piano',false);dlg.showModal();});
   closer.addEventListener('click',()=>dlg.close());
   dlg.addEventListener('click',e=>{if(e.target===dlg)dlg.close();});
