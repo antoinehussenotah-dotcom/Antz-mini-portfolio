@@ -902,7 +902,36 @@ html{scroll-behavior:smooth}
   .booking-live .live-event-parties{display:block}
   .booking-live .live-event-parties::before{content:none}
 }
-</style></head><body><div aria-hidden="true" class="ambient-scene"><span class="ambient-orb one"></span><span class="ambient-orb two"></span><span class="ambient-orb three"></span></div><div aria-hidden="true" class="neon-circuit-backdrop"><div class="neon-core-glow"></div><div class="circuit-left"><svg aria-hidden="true" class="circuit-graphic" preserveaspectratio="none" viewbox="0 0 160 960">
+</style>
+<style id="apgl-student-progress-20261018">
+/* Small APGL service highlight; detailed examples only on click. */
+.apgl-progress-preview{display:grid;grid-template-columns:minmax(0,1fr) auto;align-items:center;gap:14px;margin:14px 0 5px;padding:15px;border:1px solid rgba(151,203,255,.32);border-radius:13px;background:linear-gradient(135deg,rgba(42,58,78,.72),rgba(20,24,35,.9))}
+.apgl-progress-eyebrow{font-size:10px;line-height:1.3;font-weight:850;letter-spacing:.14em;color:#a8d6ff}
+.apgl-progress-preview h4{font-size:16px;line-height:1.3;color:#f9f8ff;margin:5px 0}
+.apgl-progress-preview p{margin:0;max-width:560px;font-size:13px;color:#d1d3e2;line-height:1.5}
+.apgl-progress-open{font:inherit;font-size:12px;line-height:1.35;text-align:center;font-weight:800;max-width:190px;min-height:44px;padding:11px 12px;border-radius:10px;border:1px solid #94c8ff93;background:#263b56;color:#f5faff;cursor:pointer}
+.apgl-progress-open:hover{background:#35577e}
+.apgl-progress-open:focus-visible,.apgl-progress-tab:focus-visible,.apgl-progress-close:focus-visible{outline:3px solid #a8d6ff;outline-offset:3px}
+.apgl-progress-dialog{width:min(94vw,665px);height:min(86dvh,790px);max-height:86dvh}
+.apgl-progress-dialog .review-modal-top{background:linear-gradient(130deg,#25364d,#141a29)}
+.apgl-progress-dialog .review-modal-eyebrow{color:#b2dbff}
+.apgl-progress-tabs{display:flex;gap:8px;flex-wrap:wrap;margin-top:16px}
+.apgl-progress-tab{font:inherit;font-size:12px;font-weight:780;line-height:1.3;cursor:pointer;color:#d7e5fb;border:1px solid #b2d8ff55;border-radius:999px;background:#25364b;padding:9px 13px;min-height:40px}
+.apgl-progress-tab[aria-selected="true"]{color:#111d30;background:#deefff;border-color:#deefff}
+.apgl-progress-note{font-size:12px;line-height:1.5;margin:0 0 15px;color:#d7d3de}
+.apgl-progress-case{background:#f5f0df;color:#201e28;border-radius:15px;padding:17px;box-shadow:0 6px 21px #0003}
+.apgl-progress-case[hidden]{display:none!important}
+.apgl-progress-kind{font-size:11px;letter-spacing:.12em;text-transform:uppercase;font-weight:850;color:#475d80}
+.apgl-progress-case h3{margin:5px 0 9px;font-size:22px;line-height:1.2;color:#1c273a}
+.apgl-progress-case h4{font-size:14px;line-height:1.3;color:#36516d;margin:17px 0 7px}
+.apgl-progress-case p,.apgl-progress-case li{font-size:14px;line-height:1.53;color:#2e2b31}
+.apgl-progress-case p{margin:0 0 10px}
+.apgl-progress-case ul{padding-left:20px;margin:3px 0 12px}
+.apgl-progress-case li{margin:5px 0}
+.apgl-progress-conclusion{border-top:1px solid #9ea9b36b;margin-top:15px!important;padding-top:12px;font-weight:650}
+@media(max-width:520px){.apgl-progress-preview{grid-template-columns:1fr;gap:10px;padding:14px}.apgl-progress-open{width:100%;max-width:none}.apgl-progress-preview h4{font-size:15px}.apgl-progress-dialog .review-modal-top{padding:14px 13px 12px}.apgl-progress-dialog .review-scroll{padding:13px 12px 24px}.apgl-progress-case{padding:14px}.apgl-progress-case h3{font-size:20px}}
+</style>
+</head><body><div aria-hidden="true" class="ambient-scene"><span class="ambient-orb one"></span><span class="ambient-orb two"></span><span class="ambient-orb three"></span></div><div aria-hidden="true" class="neon-circuit-backdrop"><div class="neon-core-glow"></div><div class="circuit-left"><svg aria-hidden="true" class="circuit-graphic" preserveaspectratio="none" viewbox="0 0 160 960">
 <g fill="none" stroke="#f14c76" stroke-linejoin="bevel" stroke-width="1.15">
 <path class="circuit-trace" d="M0 90 H85 L112 118 V187 L146 218 V293 L110 321 H48 L0 360"></path>
 <path class="circuit-trace" d="M0 210 H33 L70 248 V322 L34 359 H0"></path>
@@ -1070,6 +1099,15 @@ document.getElementById('play-hare').addEventListener('click',()=>{
 <div class="showcase-controller"><button aria-label="Previous featured item" class="showcase-prev" type="button">←</button><div class="showcase-dots"><button aria-label="Show item 1" aria-pressed="true" class="showcase-dot" data-slide-index="0" type="button"></button><button aria-label="Show item 2" aria-pressed="false" class="showcase-dot" data-slide-index="1" type="button"></button><button aria-label="Show item 3" aria-pressed="false" class="showcase-dot" data-slide-index="2" type="button"></button></div><button aria-label="Next featured item" class="showcase-next" type="button">→</button></div><div class="showcase-autoplay-row"><span>Latest first · APGL</span><button aria-label="Pause automatic rotation" aria-pressed="true" class="showcase-autoplay-toggle" type="button">⏸ Auto: On</button></div>
 <button aria-controls="showcase-all-lessons" aria-expanded="false" class="showcase-expand" type="button">Explore the full world <span aria-hidden="true">⌄</span></button>
 <div class="showcase-archive" hidden="" id="showcase-all-lessons"><p>Select any item. New work can be added here first.</p><div class="showcase-archive-items"></div></div>
+
+<section class="apgl-progress-preview" aria-labelledby="apgl-progress-preview-title">
+  <div class="apgl-progress-preview-copy">
+    <span class="apgl-progress-eyebrow">APGL · PERSONAL PROGRESS</span>
+    <h4 id="apgl-progress-preview-title">Clear progress, practical next steps</h4>
+    <p>See how lesson feedback helps students and families understand what is going well, what to practise and what comes next.</p>
+  </div>
+  <button aria-haspopup="dialog" aria-controls="apgl-progress-dialog" class="apgl-progress-open" id="apgl-progress-open" type="button">View example progress updates <span aria-hidden="true">↗</span></button>
+</section>
 </div><div class="showcase-foot-links"><a data-close-worlds="true" href="#contact">Enquire about piano &amp; guitar lessons ↓</a><button data-trigger-original="open-reviews" type="button">★★★★★ Teaching reviews ↗</button></div></div>
 <div aria-labelledby="modal-tab-originals" class="world-detail" hidden="" id="world-originals" role="tabpanel"><div class="world-detail-top"><span class="world-label">ORIGINALS // RED WORLD</span><h3>Original releases, teasers &amp; the next chapter.</h3></div><div aria-label="Originals quick actions" class="world-quick-links">
 <button class="showcase-shortcut" data-original-shortcut="1" type="button">See releases ↗</button>
@@ -1468,4 +1506,90 @@ document.getElementById('play-hare').addEventListener('click',()=>{
     root.style.scrollBehavior = oldBehavior;
   }));
 })();
-</script></body></html>
+</script>
+<dialog aria-labelledby="apgl-progress-title" class="review-dialog apgl-progress-dialog" id="apgl-progress-dialog">
+  <div class="review-modal-shell">
+    <div class="review-modal-top">
+      <div class="review-modal-title">
+        <div><span class="review-modal-eyebrow">APGL · TEACHING</span><h2 id="apgl-progress-title">Student progress updates</h2></div>
+        <button aria-label="Close student progress updates" class="review-modal-close apgl-progress-close" id="apgl-progress-close" type="button">✕ Close</button>
+      </div>
+      <div aria-label="Choose an example report" class="apgl-progress-tabs" role="tablist">
+        <button aria-controls="apgl-progress-piano" aria-selected="true" class="apgl-progress-tab" id="apgl-progress-tab-piano" role="tab" tabindex="0" type="button" data-apgl-case="piano">Piano · Exam progress</button>
+        <button aria-controls="apgl-progress-guitar" aria-selected="false" class="apgl-progress-tab" id="apgl-progress-tab-guitar" role="tab" tabindex="-1" type="button" data-apgl-case="guitar">Guitar · Practice plan</button>
+      </div>
+    </div>
+    <div class="review-scroll">
+      <p class="apgl-progress-note">Illustrative, anonymised examples showing the style of written feedback offered after lessons. No private student messages or identifying details are published.</p>
+      <section aria-labelledby="apgl-progress-tab-piano" class="apgl-progress-case" id="apgl-progress-piano" role="tabpanel" tabindex="0">
+        <span class="apgl-progress-kind">Example 01 · Piano &amp; exam preparation</span>
+        <h3>Making progress, building confidence</h3>
+        <h4>✓ Progress</h4>
+        <ul>
+          <li>Exam pieces have been learnt and are ready for final polishing.</li>
+          <li>Technical work is progressing, with remaining scales and arpeggios to complete.</li>
+          <li>Sight-reading is developing; confidence is the main focus.</li>
+          <li>Aural skills will be introduced as part of the preparation.</li>
+        </ul>
+        <h4>→ Next steps</h4>
+        <ul>
+          <li>Polish phrasing, fluency and musical expression in each piece.</li>
+          <li>Continue working through scales and arpeggios.</li>
+          <li>Build sight-reading confidence and add regular aural practice.</li>
+        </ul>
+        <h4>▣ Exam recommendation</h4>
+        <p>Choose an examination date based on preparation and confidence, rather than rushing to meet the earliest possible session.</p>
+        <p class="apgl-progress-conclusion">The goal is a positive, confident exam experience with clear milestones along the way.</p>
+      </section>
+      <section aria-labelledby="apgl-progress-tab-guitar" class="apgl-progress-case" hidden id="apgl-progress-guitar" role="tabpanel" tabindex="0">
+        <span class="apgl-progress-kind">Example 02 · Guitar &amp; musical development</span>
+        <h3>Enjoy the music. Strengthen the foundations.</h3>
+        <h4>✓ Progress</h4>
+        <p>Improving notation reading, note recognition, fretboard positions and awareness of musical keys.</p>
+        <h4>→ A flexible three-part practice plan</h4>
+        <ul>
+          <li><strong>Play for enjoyment:</strong> choose familiar pieces or music you love, with no pressure.</li>
+          <li><strong>Focused improvement:</strong> use short pieces to work on sight-reading, fretboard note recognition and key awareness.</li>
+          <li><strong>Structured progression:</strong> keep advancing through a music book or graded repertoire you enjoy.</li>
+        </ul>
+        <h4>♫ Music theory focus</h4>
+        <p>Practise recognising sharps, flats, key signatures, relative minor keys and accidentals. Use the tonal centre to understand the key of a piece.</p>
+        <h4>▣ Next steps</h4>
+        <p>Explore one piece in both standard notation with TAB and standard notation alone, gradually developing independent reading confidence.</p>
+        <p class="apgl-progress-conclusion">Rotate between the three practice areas. Making music should stay enjoyable while skills develop.</p>
+      </section>
+    </div>
+  </div>
+</dialog>
+<script id="apgl-progress-modal-script">
+(() => {
+  const dlg=document.getElementById('apgl-progress-dialog');
+  const opener=document.getElementById('apgl-progress-open');
+  const closer=document.getElementById('apgl-progress-close');
+  const tabs=[...dlg.querySelectorAll('[data-apgl-case]')];
+  const panels={piano:document.getElementById('apgl-progress-piano'),guitar:document.getElementById('apgl-progress-guitar')};
+  if(!dlg||!opener||!closer||!panels.piano||!panels.guitar)return;
+  function choose(which,focus){
+    tabs.forEach(tab=>{
+      const active=tab.dataset.apglCase===which;
+      tab.setAttribute('aria-selected',String(active));
+      tab.tabIndex=active?0:-1;
+      if(active&&focus)tab.focus();
+    });
+    Object.entries(panels).forEach(([key,panel])=>{panel.hidden=key!==which;});
+    const sc=dlg.querySelector('.review-scroll');if(sc)sc.scrollTop=0;
+  }
+  opener.addEventListener('click',()=>{choose('piano',false);dlg.showModal();});
+  closer.addEventListener('click',()=>dlg.close());
+  dlg.addEventListener('click',e=>{if(e.target===dlg)dlg.close();});
+  tabs.forEach((tab,i)=>{
+    tab.addEventListener('click',()=>choose(tab.dataset.apglCase,true));
+    tab.addEventListener('keydown',e=>{
+      if(e.key!=='ArrowLeft'&&e.key!=='ArrowRight')return;
+      e.preventDefault();const shift=e.key==='ArrowRight'?1:-1;
+      choose(tabs[(i+shift+tabs.length)%tabs.length].dataset.apglCase,true);
+    });
+  });
+})();
+</script>
+</body></html>
