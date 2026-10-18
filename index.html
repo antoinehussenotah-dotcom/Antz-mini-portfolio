@@ -149,6 +149,14 @@
   #world-lessons .showcase-copy{min-height:0}
 }
 
+
+.apgl-early-shortcut{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:10px;padding:11px 12px;margin:11px 0 4px;border:1px solid #9ccfff66;border-radius:12px;background:linear-gradient(110deg,#20364d,#182233);color:#f2f8ff}
+.apgl-early-shortcut>span{display:flex;align-items:center;gap:9px;font-size:13px}
+.apgl-early-shortcut img{display:block;width:53px;height:29px;object-fit:contain;background:#fff;border-radius:5px;padding:2px}
+.apgl-early-shortcut button{font:inherit;font-size:12px;font-weight:800;color:#172638;background:#d8edff;border:0;border-radius:8px;min-height:39px;padding:8px 12px;cursor:pointer}
+.apgl-early-shortcut button:focus-visible{outline:3px solid #9ccfff;outline-offset:3px}
+.apgl-tile-highlight{display:block;font-size:11px;font-weight:750;color:#cce9ff;margin-top:4px}
+@media(max-width:460px){.apgl-early-shortcut{align-items:stretch}.apgl-early-shortcut button{width:100%}}
 </style><style>
 /* Four Worlds preview: inherit mini-portfolio type, palette, card corners and reviews */
 .booking-intro{margin:18px 0 16px;padding:3px 0 1px}
@@ -1016,7 +1024,7 @@ html{scroll-behavior:smooth}
 <span class="world-title">Originals</span><span class="world-sub">The artist &amp; releases</span>
 </button>
 <button aria-controls="worlds-modal" aria-haspopup="dialog" class="world-tile blue" data-world="lessons" id="world-tab-lessons" type="button">
-<span class="world-image"><img alt="Original APGL logo" loading="lazy" decoding="async" width="1005" height="425" src="assets/apgl-logo.webp"/></span><span class="world-title">Guitar &amp; piano</span><span class="world-sub">Personalised lessons · Meaningful updates</span>
+<span class="world-image"><img alt="Original APGL logo" loading="lazy" decoding="async" width="1005" height="425" src="assets/apgl-logo.webp"/></span><span class="world-title">Guitar &amp; piano</span><span class="world-sub">Personalised lessons · Meaningful updates</span><span class="apgl-tile-highlight">★ Reviews &amp; progress reports</span>
 </button>
 <button aria-controls="worlds-modal" aria-haspopup="dialog" class="world-tile yellow selected" data-world="live" id="world-tab-live" type="button">
 <span class="world-image"><img alt="AntZ live at The Hare" loading="lazy" src="assets/hare-live-photo.webp" decoding="async"/><span class="world-photo-logo photo-logo-img"><img alt="" aria-hidden="true" src="assets/antz-photo-signature.webp" decoding="async"/></span></span><span class="world-title">Live / gigs</span><span class="world-sub">The performer</span>
@@ -1025,6 +1033,7 @@ html{scroll-behavior:smooth}
 <span class="world-image afgm-image"><img alt="Official AFGM AntZ Film &amp; Game Music logo" loading="lazy" src="assets/afgm-logo.webp" decoding="async"/></span><span class="world-title">Composing / AfGM</span><span class="world-sub">The composer</span>
 </button>
 </div>
+<div class="apgl-early-shortcut"><span><img src="assets/apgl-logo.webp" alt="" loading="lazy" decoding="async"/> <strong>Personalised student progress</strong></span><button type="button" id="apgl-progress-early" aria-haspopup="dialog" aria-controls="apgl-progress-dialog">See example reports ↗</button></div>
 <div class="worlds-launch-hint">Choose a world for its videos, releases and reviews — all in one interactive menu.</div><button class="band-collab-trigger" id="band-collab-trigger" type="button">Bands &amp; collaborations ↗</button>
 <p class="worlds-hint">Switch between worlds inside the menu, then close to return here.</p>
 </section>
@@ -1604,6 +1613,7 @@ document.getElementById('play-hare').addEventListener('click',()=>{
     const sc=dlg.querySelector('.review-scroll');if(sc)sc.scrollTop=0;
   }
   opener.addEventListener('click',()=>{choose('piano',false);dlg.showModal();});
+  document.getElementById('apgl-progress-early')?.addEventListener('click',()=>{choose('piano',false);dlg.showModal();});
   closer.addEventListener('click',()=>dlg.close());
   dlg.addEventListener('click',e=>{if(e.target===dlg)dlg.close();});
   tabs.forEach((tab,i)=>{
