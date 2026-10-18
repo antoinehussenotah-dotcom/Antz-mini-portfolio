@@ -904,14 +904,19 @@ html{scroll-behavior:smooth}
 }
 </style>
 <style id="apgl-student-progress-20261018">
-/* Small APGL service highlight; detailed examples only on click. */
-.apgl-progress-preview{display:grid;grid-template-columns:minmax(0,1fr) auto;align-items:center;gap:14px;margin:14px 0 5px;padding:15px;border:1px solid rgba(151,203,255,.32);border-radius:13px;background:linear-gradient(135deg,rgba(42,58,78,.72),rgba(20,24,35,.9))}
-.apgl-progress-eyebrow{font-size:10px;line-height:1.3;font-weight:850;letter-spacing:.14em;color:#a8d6ff}
-.apgl-progress-preview h4{font-size:16px;line-height:1.3;color:#f9f8ff;margin:5px 0}
-.apgl-progress-preview p{margin:0;max-width:560px;font-size:13px;color:#d1d3e2;line-height:1.5}
-.apgl-progress-open{font:inherit;font-size:12px;line-height:1.35;text-align:center;font-weight:800;max-width:190px;min-height:44px;padding:11px 12px;border-radius:10px;border:1px solid #94c8ff93;background:#263b56;color:#f5faff;cursor:pointer}
-.apgl-progress-open:hover{background:#35577e}
-.apgl-progress-open:focus-visible,.apgl-progress-tab:focus-visible,.apgl-progress-close:focus-visible{outline:3px solid #a8d6ff;outline-offset:3px}
+/* APGL's two primary proof points sit directly under the lessons introduction. */
+.apgl-featured-proof{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:9px;margin:12px 0 5px}
+.apgl-proof-button{display:flex;align-items:center;gap:10px;min-width:0;min-height:66px;padding:10px 11px;border:1px solid #90c4ff74;border-radius:12px;background:linear-gradient(135deg,#273d57,#1b283b);color:#f3f7ff;text-align:left;cursor:pointer;font:inherit;box-shadow:inset 0 1px 0 #ffffff14;transition:background .15s,border-color .15s}
+.apgl-proof-progress{border-color:#b0d9ff9a;background:linear-gradient(135deg,#365579,#20314e)}
+.apgl-proof-reviews{border-color:#e1d0a15e;background:linear-gradient(135deg,#393241,#262331)}
+.apgl-proof-button:hover{background:#42617b;border-color:#e0efff}
+.apgl-proof-button:focus-visible,.apgl-progress-tab:focus-visible,.apgl-progress-close:focus-visible{outline:3px solid #a8d6ff;outline-offset:3px}
+.apgl-proof-logo{display:flex;flex:0 0 67px;align-items:center;justify-content:center;height:32px;background:#fff;border-radius:6px;overflow:hidden}
+.apgl-proof-logo img{display:block;width:100%;height:auto;object-fit:contain}
+.apgl-proof-stars{flex:0 0 auto;color:#ffcf5a;font-size:16px;letter-spacing:-.06em;white-space:nowrap}
+.apgl-proof-copy{display:flex;flex-direction:column;gap:3px;min-width:0}
+.apgl-proof-copy strong{font-size:13px;line-height:1.3;font-weight:850}
+.apgl-proof-copy small{font-size:11px;line-height:1.25;color:#d5e1f6}
 .apgl-progress-dialog{width:min(94vw,665px);height:min(86dvh,790px);max-height:86dvh}
 .apgl-progress-dialog .review-modal-top{background:linear-gradient(130deg,#25364d,#141a29)}
 .apgl-progress-dialog .review-modal-eyebrow{color:#b2dbff}
@@ -929,7 +934,21 @@ html{scroll-behavior:smooth}
 .apgl-progress-case ul{padding-left:20px;margin:3px 0 12px}
 .apgl-progress-case li{margin:5px 0}
 .apgl-progress-conclusion{border-top:1px solid #9ea9b36b;margin-top:15px!important;padding-top:12px;font-weight:650}
-@media(max-width:520px){.apgl-progress-preview{grid-template-columns:1fr;gap:10px;padding:14px}.apgl-progress-open{width:100%;max-width:none}.apgl-progress-preview h4{font-size:15px}.apgl-progress-dialog .review-modal-top{padding:14px 13px 12px}.apgl-progress-dialog .review-scroll{padding:13px 12px 24px}.apgl-progress-case{padding:14px}.apgl-progress-case h3{font-size:20px}}
+
+@media(max-width:600px){
+ .apgl-featured-proof{gap:8px;margin-top:11px}
+ .apgl-proof-button{flex-direction:column;align-items:flex-start;justify-content:center;min-height:105px;padding:10px}
+ .apgl-proof-logo{flex:0 0 auto;width:75px;height:32px}
+ .apgl-proof-stars{font-size:16px;line-height:32px}
+ .apgl-proof-copy strong{font-size:12.5px}
+ .apgl-proof-copy small{font-size:11px}
+}
+@media(max-width:520px){
+ .apgl-progress-dialog .review-modal-top{padding:14px 13px 12px}
+ .apgl-progress-dialog .review-scroll{padding:13px 12px 24px}
+ .apgl-progress-case{padding:14px}
+ .apgl-progress-case h3{font-size:20px}
+}
 </style>
 </head><body><div aria-hidden="true" class="ambient-scene"><span class="ambient-orb one"></span><span class="ambient-orb two"></span><span class="ambient-orb three"></span></div><div aria-hidden="true" class="neon-circuit-backdrop"><div class="neon-core-glow"></div><div class="circuit-left"><svg aria-hidden="true" class="circuit-graphic" preserveaspectratio="none" viewbox="0 0 160 960">
 <g fill="none" stroke="#f14c76" stroke-linejoin="bevel" stroke-width="1.15">
@@ -1093,6 +1112,18 @@ document.getElementById('play-hare').addEventListener('click',()=>{
 <div class="showcase-archive" hidden="" id="showcase-all-live"><p>Select any item. New work can be added here first.</p><div class="showcase-archive-items"></div></div>
 </div><div class="showcase-foot-links"><a data-close-worlds="true" href="#contact">Book / enquire about a performance ↓</a><button data-trigger-original="open-live-review" type="button">★★★★★ Read live review ↗</button></div></div>
 <div aria-labelledby="modal-tab-lessons" class="world-detail" hidden="" id="world-lessons" role="tabpanel"><div class="world-detail-top"><span class="world-label">GUITAR &amp; PIANO // BLUE WORLD</span><h3>More than a weekly lesson.</h3></div><p class="apgl-value-intro">Personalised lessons, meaningful progress updates and support tailored to each student’s needs.</p>
+
+<div class="apgl-featured-proof" aria-label="Explore progress updates and teaching reviews">
+  <button aria-haspopup="dialog" aria-controls="apgl-progress-dialog" class="apgl-proof-button apgl-proof-progress" id="apgl-progress-open" type="button">
+    <span class="apgl-proof-logo" aria-hidden="true"><img src="assets/apgl-logo.webp" alt="" width="1005" height="425" loading="lazy" decoding="async"/></span>
+    <span class="apgl-proof-copy"><strong>Student progress updates</strong><small>View example reports ↗</small></span>
+  </button>
+  <button class="apgl-proof-button apgl-proof-reviews" data-trigger-original="open-reviews" type="button">
+    <span class="apgl-proof-stars" aria-hidden="true">★★★★★</span>
+    <span class="apgl-proof-copy"><strong>Teaching reviews</strong><small>Read 26 reviews ↗</small></span>
+  </button>
+</div>
+
 <div class="showcase-carousel" data-showcase="lessons">
 <div class="showcase-headline"><strong>Featured &amp; latest</strong><span aria-live="polite" class="showcase-count">1 / 3</span></div>
 <div class="showcase-track"><article class="showcase-slide" role="group"><div class="showcase-frame"><div class="showcase-art logo"><img alt="Piano &amp; Guitar Lessons artwork" loading="lazy" src="assets/apgl-logo.webp" decoding="async"/></div><div class="showcase-copy"><span class="showcase-tag">TEACHING · APGL</span><h4>Piano &amp; Guitar Lessons</h4><p>Your APGL teaching identity, with lessons tailored to individual progress.</p><div class="showcase-actions"><a class="showcase-action" href="https://wa.me/447901993421" rel="noopener noreferrer" target="_blank">Enquire about lessons ↗</a></div></div></div></article><article class="showcase-slide" hidden="" role="group"><div class="showcase-frame"><div class="showcase-art logo"><img alt="Learn. Play. Progress. artwork" loading="lazy" src="assets/apgl-logo.webp" decoding="async"/></div><div class="showcase-copy"><span class="showcase-tag">VIDEO · TEACHING</span><h4>Learn. Play. Progress.</h4><p>Watch the existing piano and guitar teaching advert.</p><div class="showcase-actions"><a class="showcase-action" href="https://www.instagram.com/reel/Dd5Mu4dKeJa/" rel="noopener noreferrer" target="_blank">Watch teaching advert ↗</a></div></div></div></article><article class="showcase-slide" hidden="" role="group"><div class="showcase-frame"><div class="showcase-art logo"><img alt="Teaching reviews artwork" loading="lazy" src="assets/apgl-logo.webp" decoding="async"/></div><div class="showcase-copy"><span class="showcase-tag">STUDENT FEEDBACK</span><h4>Teaching reviews</h4><p>Browse the saved teaching reviews already featured in the portfolio.</p><div class="showcase-actions"><button class="showcase-action" data-trigger-original="open-reviews" type="button">Open reviews ↗</button></div></div></div></article></div>
@@ -1100,14 +1131,7 @@ document.getElementById('play-hare').addEventListener('click',()=>{
 <button aria-controls="showcase-all-lessons" aria-expanded="false" class="showcase-expand" type="button">Explore the full world <span aria-hidden="true">⌄</span></button>
 <div class="showcase-archive" hidden="" id="showcase-all-lessons"><p>Select any item. New work can be added here first.</p><div class="showcase-archive-items"></div></div>
 
-<section class="apgl-progress-preview" aria-labelledby="apgl-progress-preview-title">
-  <div class="apgl-progress-preview-copy">
-    <span class="apgl-progress-eyebrow">APGL · PERSONAL PROGRESS</span>
-    <h4 id="apgl-progress-preview-title">Clear progress, practical next steps</h4>
-    <p>See how lesson feedback helps students and families understand what is going well, what to practise and what comes next.</p>
-  </div>
-  <button aria-haspopup="dialog" aria-controls="apgl-progress-dialog" class="apgl-progress-open" id="apgl-progress-open" type="button">View example progress updates <span aria-hidden="true">↗</span></button>
-</section>
+
 </div><div class="showcase-foot-links"><a data-close-worlds="true" href="#contact">Enquire about piano &amp; guitar lessons ↓</a><button data-trigger-original="open-reviews" type="button">★★★★★ Teaching reviews ↗</button></div></div>
 <div aria-labelledby="modal-tab-originals" class="world-detail" hidden="" id="world-originals" role="tabpanel"><div class="world-detail-top"><span class="world-label">ORIGINALS // RED WORLD</span><h3>Original releases, teasers &amp; the next chapter.</h3></div><div aria-label="Originals quick actions" class="world-quick-links">
 <button class="showcase-shortcut" data-original-shortcut="1" type="button">See releases ↗</button>
