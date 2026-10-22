@@ -1743,9 +1743,29 @@ Your browser does not support video playback.
   const video=document.getElementById('afgm-promo-video');
   const status=document.getElementById('afgm-promo-error');
   if(!opener||!dialog||!closer||!video||!status)return;
-  opener.addEventListener('click',()=>{
+  const optimizedPath='assets/afgm-website-promo-optimized.mp4';
+  const directLink=dialog.querySelector('.afgm-promo-open-link');
+  const videoSource=video.querySelector('source');
+  let sourceSelected=false;
+  async function preferOptimizedVideo(){
+    if(sourceSelected)return;
+    try{
+      const response=await fetch(optimizedPath,{method:'HEAD'});
+      const mime=(response.headers.get('content-type')||'').toLowerCase();
+      if(response.ok && !mime.includes('text/html')){
+        video.pause();
+        videoSource.src=optimizedPath;
+        directLink.href=optimizedPath;
+        video.load();
+      }
+    }catch(error){/* Original video remains available until optimized upload exists. */}
+    sourceSelected=true;
+  }
+  opener.addEventListener('click',async()=>{
     status.hidden=true;
     dialog.showModal();
+    await preferOptimizedVideo();
+    if(!dialog.open)return;
     const started=video.play();
     if(started && started.catch)started.catch(()=>{});
   });
