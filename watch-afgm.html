@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#171020">
+<meta name="description" content="Watch the AFGM introduction — original film and game music, remixes and interpretations by AntZ.">
+<title>Watch AFGM Promo | AntZ Music</title>
+<style>
+:root{color-scheme:dark;font-family:system-ui,-apple-system,"Segoe UI",Arial,sans-serif}
+*{box-sizing:border-box}
+html,body{margin:0;min-height:100%;background:#100c19;color:#faf6ff}
+body{min-height:100dvh;background:radial-gradient(ellipse at 50% 0,#332044 0,#130f1c 62%,#0a0910 100%)}
+main{width:min(100%,640px);margin-inline:auto;padding:16px 13px 32px;display:flex;flex-direction:column;gap:13px}
+header{display:flex;align-items:center;justify-content:space-between;gap:12px}
+header strong{font-size:14px;letter-spacing:.04em;color:#e2c1ff}
+a{color:#e3c3ff;text-underline-offset:3px}
+.back{font-size:13px;padding:9px 12px;border:1px solid #caa1ee77;border-radius:10px;text-decoration:none;white-space:nowrap}
+h1{font-size:19px;line-height:1.35;margin:3px 0 0}
+.subtitle{font-size:13px;color:#c8b5d8;margin:0}
+.frame{display:flex;justify-content:center;background:#05040a;border:1px solid #a884c255;border-radius:14px;overflow:hidden}
+video{display:block;width:auto;max-width:100%;height:auto;max-height:min(calc(100dvh - 185px),800px);aspect-ratio:9/16;object-fit:contain;background:#05040a}
+.status{color:#f4b3c3;font-size:13px;line-height:1.5;margin:0}
+.status[hidden]{display:none}
+.direct{display:block;padding:10px 13px;border:1px solid #b68ad177;border-radius:10px;text-align:center;text-decoration:none;font-size:13px;background:#291b37}
+.small{font-size:12px;color:#bcaccb;line-height:1.55;margin:0}
+</style>
+</head>
+<body>
+<main>
+<header><strong>ANTZ MUSIC · AFGM</strong><a class="back" href="./#antz-worlds">← Portfolio</a></header>
+<h1>AFGM — Film &amp; Game Music</h1>
+<p class="subtitle">Watch the 26-second introduction · optimised for mobile</p>
+<div class="frame">
+<video id="afgm-clip" controls autoplay playsinline preload="metadata" poster="assets/afgm-logo.webp" aria-label="AFGM promotional video">
+<source src="assets/afgm-website-promo-optimized.mp4?v=20261022" type="video/mp4">
+Your browser does not support HTML5 video.
+</video>
+</div>
+<p class="status" id="play-status" aria-live="polite" hidden></p>
+<a class="direct" href="assets/afgm-website-promo-optimized.mp4?v=20261022">▶ Open the video directly (alternative player)</a>
+<p class="small">If it does not start with sound, tap Play. You can also use the direct video link to bypass the website player.</p>
+</main>
+<script>
+(() => {
+  const video=document.getElementById('afgm-clip');
+  const status=document.getElementById('play-status');
+  const say=message=>{status.textContent=message;status.hidden=!message;};
+  const playback=video.play();
+  if(playback && playback.catch){
+    playback.catch(error=>{
+      if(error?.name==='NotAllowedError')say('Tap Play to start the video with sound.');
+      else say('The video did not start automatically. Tap Play or use the direct video link.');
+    });
+  }
+  video.addEventListener('playing',()=>say(''));
+  video.addEventListener('error',()=>say('The embedded player could not load the clip. Please use the direct video link.'));
+})();
+</script>
+</body>
+</html>
