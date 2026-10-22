@@ -696,10 +696,16 @@ html{scroll-behavior:smooth}
     backdrop-filter:none!important;
   }
   /* Keep large filters and SVG circuitry static to avoid scroll repaints. */
-  .ambient-orb,.neon-core-glow,.v4-pulse,.v4-code-fall,.circuit-trace {
+  .ambient-orb,.neon-core-glow,.v4-pulse {
     animation:none!important;
     will-change:auto!important;
   }
+  /* Keep the lightweight neon circuit signal moving on mobile. */
+  .circuit-trace {
+    animation:antzSignalRun 9s linear infinite!important;
+    will-change:auto!important;
+  }
+  .circuit-trace:nth-child(even) {animation-duration:12s!important}
   /* Restore a single drifting neon orb using only compositor-friendly movement. */
   .ambient-orb.one {
     animation:antzMobileOrbDrift 23s ease-in-out infinite alternate!important;
