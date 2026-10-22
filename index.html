@@ -1727,13 +1727,13 @@ document.getElementById('play-hare').addEventListener('click',()=>{
 @media(max-width:480px){.afgm-promo-feature{align-items:stretch;padding:13px}.afgm-promo-launch{width:100%;text-align:center}}
 </style>
 <dialog id="afgm-promo-dialog" class="afgm-promo-dialog" aria-label="Watch the AFGM introduction video">
-<div class="afgm-promo-dialog-head"><strong>AFGM // INTRODUCTION</strong><button type="button" id="afgm-promo-close" class="afgm-promo-close" aria-label="Close AFGM promotional video">✕ Close</button></div>
-<video id="afgm-promo-video" controls playsinline preload="none" poster="assets/afgm-logo.webp">
-<source src="https://raw.githubusercontent.com/antoinehussenotah-dotcom/Antz-website-public/main/assets/2026-10-22-053840203.mp4" type="video/mp4">
+<div class="afgm-promo-dialog-head"><strong>AFGM // INTRODUCTION · OPTIMISED</strong><button type="button" id="afgm-promo-close" class="afgm-promo-close" aria-label="Close AFGM promotional video">✕ Close</button></div>
+<video id="afgm-promo-video" controls playsinline preload="metadata" poster="assets/afgm-logo.webp">
+<source src="assets/afgm-website-promo-optimized.mp4?v=20261022" type="video/mp4">
 Your browser does not support video playback.
 </video>
 <p class="afgm-promo-error" id="afgm-promo-error" hidden>Video playback failed. You can open it directly using the link below.</p>
-<a class="afgm-promo-open-link" href="https://raw.githubusercontent.com/antoinehussenotah-dotcom/Antz-website-public/main/assets/2026-10-22-053840203.mp4" target="_blank" rel="noopener noreferrer">Open AFGM promo directly ↗</a>
+<a class="afgm-promo-open-link" href="assets/afgm-website-promo-optimized.mp4?v=20261022" target="_blank" rel="noopener noreferrer">Open AFGM promo directly ↗</a>
 </dialog>
 <script id="afgm-promo-2026-script">
 (() => {
@@ -1743,29 +1743,9 @@ Your browser does not support video playback.
   const video=document.getElementById('afgm-promo-video');
   const status=document.getElementById('afgm-promo-error');
   if(!opener||!dialog||!closer||!video||!status)return;
-  const optimizedPath='assets/afgm-website-promo-optimized.mp4';
-  const directLink=dialog.querySelector('.afgm-promo-open-link');
-  const videoSource=video.querySelector('source');
-  let sourceSelected=false;
-  async function preferOptimizedVideo(){
-    if(sourceSelected)return;
-    try{
-      const response=await fetch(optimizedPath,{method:'HEAD'});
-      const mime=(response.headers.get('content-type')||'').toLowerCase();
-      if(response.ok && !mime.includes('text/html')){
-        video.pause();
-        videoSource.src=optimizedPath;
-        directLink.href=optimizedPath;
-        video.load();
-      }
-    }catch(error){/* Original video remains available until optimized upload exists. */}
-    sourceSelected=true;
-  }
-  opener.addEventListener('click',async()=>{
+  opener.addEventListener('click',()=>{
     status.hidden=true;
     dialog.showModal();
-    await preferOptimizedVideo();
-    if(!dialog.open)return;
     const started=video.play();
     if(started && started.catch)started.catch(()=>{});
   });
