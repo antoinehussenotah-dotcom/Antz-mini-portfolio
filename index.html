@@ -725,12 +725,14 @@ html{scroll-behavior:smooth}
     animation-duration:27s!important;
     animation-direction:alternate-reverse!important;
   }
-  /* Keep the neon scanline, but make it slower and far less dominant. */
+  /* Restore a clearly visible but lightweight moving neon scanline. */
   .ambient-scanline {
     top:-5%;
-    opacity:.24!important;
-    box-shadow:0 0 7px rgba(253,78,120,.12)!important;
-    animation:antzMobileScanSweep 23s linear infinite!important;
+    height:2px!important;
+    opacity:.82!important;
+    background:linear-gradient(90deg,transparent 0%,rgba(255,80,126,.45) 18%,rgba(255,165,190,.95) 50%,rgba(255,80,126,.45) 82%,transparent 100%)!important;
+    box-shadow:0 0 10px rgba(255,85,130,.65),0 0 22px rgba(255,65,112,.3)!important;
+    animation:antzMobileScanSweep 13s linear infinite!important;
     will-change:transform;
   }
   /* When a media-rich popup is open, spend the animation budget on its scrolling. */
