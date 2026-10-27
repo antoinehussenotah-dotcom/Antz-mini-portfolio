@@ -9,7 +9,7 @@ const meta=document.querySelector('meta[name="description"]');
 const originalDescription=meta?.content||'';
 const descriptionFr='AntZ Music à Ealing, Londres : concerts acoustiques pop et rock, cours personnalisés de piano et de guitare, compositions originales et musique à l’image.';
 let current='en';let processing=false;
-function translateValue(value,lang){if(!value)return value;const lead=value.match(/^\\s*/)?.[0]||'';const tail=value.match(/\\s*$/)?.[0]||'';const core=value.trim();const target=lang==='fr'?translations:reverse;return Object.hasOwn(target,core)?lead+target[core]+tail:value;}
+function translateValue(value,lang){if(!value)return value;const lead=value.match(/^\s*/)?.[0]||'';const tail=value.match(/\s*$/)?.[0]||'';const core=value.trim();const target=lang==='fr'?translations:reverse;return Object.hasOwn(target,core)?lead+target[core]+tail:value;}
 function apply(root=document){if(processing)return;processing=true;try{
  const walker=document.createTreeWalker(root,NodeFilter.SHOW_TEXT,{acceptNode(node){return node.parentElement?.closest('script,style,noscript,svg,[data-no-translate],.review-quote')?NodeFilter.FILTER_REJECT:NodeFilter.FILTER_ACCEPT;}});
  const nodes=[];while(walker.nextNode())nodes.push(walker.currentNode);
