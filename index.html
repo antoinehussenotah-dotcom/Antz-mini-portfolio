@@ -2112,7 +2112,7 @@ document.getElementById('play-hare').addEventListener('click',()=>{
    line-height:1.25;
    letter-spacing:-.03em;
  }
- .antz-latest-copy>span:last-of-type{
+ .antz-latest-copy>span:not(.antz-latest-kicker):not(.antz-latest-signal){
    display:block;
    font-size:12px;
    line-height:1.5;
@@ -2136,7 +2136,7 @@ document.getElementById('play-hare').addEventListener('click',()=>{
  .antz-latest{grid-template-columns:78px minmax(0,1fr);column-gap:12px;padding:12px}
  .antz-latest-art,.antz-latest-art img{width:78px;height:78px}
  .antz-latest-kicker{font-size:9px;letter-spacing:0}
- .antz-latest-copy>span:last-of-type{font-size:11px;line-height:1.42}
+ .antz-latest-copy>span:not(.antz-latest-kicker):not(.antz-latest-signal){font-size:11px;line-height:1.42}
  .antz-latest-link{font-size:12px;min-height:38px;padding:8px 12px}
 }
 </style>
