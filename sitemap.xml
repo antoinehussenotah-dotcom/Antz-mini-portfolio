@@ -1,7 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url><loc>https://antzmusic.com/</loc></url>
-  <url><loc>https://antzmusic.com/piano-guitar-lessons-ealing.html</loc></url>
-  <url><loc>https://antzmusic.com/live-music-bookings-london.html</loc></url>
-  <url><loc>https://antzmusic.com/live-looping-performances.html</loc></url>
+  <url><loc>https://antzmusic.com/</loc><lastmod>2026-11-25</lastmod></url>
+  <url><loc>https://antzmusic.com/piano-guitar-lessons-ealing.html</loc><lastmod>2026-11-25</lastmod></url>
+  <url><loc>https://antzmusic.com/piano-lessons-ealing.html</loc><lastmod>2026-11-25</lastmod></url>
+  <url><loc>https://antzmusic.com/guitar-lessons-ealing.html</loc><lastmod>2026-11-25</lastmod></url>
+  <url><loc>https://antzmusic.com/wedding-party-musician-ealing.html</loc><lastmod>2026-11-25</lastmod></url>
+  <url><loc>https://antzmusic.com/live-music-bookings-london.html</loc><lastmod>2026-11-25</lastmod></url>
+  <url><loc>https://antzmusic.com/live-looping-performances.html</loc><lastmod>2026-11-25</lastmod></url>
+  <url><loc>https://antzmusic.com/human-error/</loc><lastmod>2026-11-25</lastmod></url>
+  <url><loc>https://antzmusic.com/releases/</loc><lastmod>2026-11-25</lastmod></url>
 </urlset>

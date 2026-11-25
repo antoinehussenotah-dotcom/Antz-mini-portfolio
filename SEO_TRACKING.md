@@ -10,6 +10,9 @@ This is a measurement checklist, not a claim of improved search rankings.
    - https://antzmusic.com/piano-guitar-lessons-ealing.html
    - https://antzmusic.com/live-music-bookings-london.html
    - https://antzmusic.com/live-looping-performances.html
+   - https://antzmusic.com/piano-lessons-ealing.html (added 25 Nov 2026)
+   - https://antzmusic.com/guitar-lessons-ealing.html (added 25 Nov 2026)
+   - https://antzmusic.com/wedding-party-musician-ealing.html (added 25 Nov 2026)
 4. Verify the pages actually load in a browser and that contact links work.
 
 ## Baseline (record after Search Console starts showing data)
